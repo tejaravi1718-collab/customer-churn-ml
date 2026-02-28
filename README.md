@@ -1,31 +1,66 @@
 # Customer Churn Prediction (XGBoost)
 
-## 📌 Problem Statement
-Predict customer churn using telecom customer data.
+## 📌 Overview
+This project builds a modular, production-ready machine learning pipeline to predict telecom customer churn using XGBoost.
+
+The system includes:
+- Clean project structure
+- Data leakage prevention
+- Feature preprocessing pipeline
+- Threshold-based decision control
+- Model persistence
+- Standalone inference script
+
+---
 
 ## 📊 Dataset
-Telco Customer Churn dataset containing demographic and service usage features.
+Telco Customer Churn dataset with demographic and service usage features.
 
-## 🛠️ Tech Stack
+Target:
+`Churn Value` (0 = No churn, 1 = Churn)
+
+---
+
+## 🛠 Tech Stack
 - Python
 - Pandas
 - Scikit-learn
 - XGBoost
 - Joblib
+- Git
 
-## 🏗️ Project Structure
-- Modular pipeline (data loading, preprocessing, training, evaluation)
-- Model persistence
-- Threshold tuning
-- Standalone prediction script
+---
+
+## 🏗 Project Structure
+
+customer-churn-ml/
+│
+├── src/
+│   ├── data_loader.py
+│   ├── preprocessing.py
+│   ├── train.py
+│   ├── evaluate.py
+│   └── predict.py
+│
+├── main.py
+├── predict.py
+├── requirements.txt
+└── README.md
+
+---
 
 ## 📈 Model Performance
-- ROC-AUC: ~0.85
-- Recall (0.3 threshold): ~0.74
-- Precision (0.3 threshold): ~0.54
 
-## 🚀 How to Run
+**ROC-AUC:** ~0.85  
+**Recall (Threshold = 0.3):** ~0.74  
+**Precision (Threshold = 0.3):** ~0.54  
 
-### Train Model
+The model supports adjustable thresholds to optimize business trade-offs between recall and precision.
+
+---
+
+## 🚀 How To Run
+
+### 1️⃣ Install Dependencies
 ```bash
-python main.py
+pip install -r requirements.txt
